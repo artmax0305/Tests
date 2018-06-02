@@ -19,15 +19,15 @@ public class TaskTwo {
                stringBuilder.append("\n");
            }
             String[] split = stringBuilder.toString().split(" ");
-            for (int i = 1; i < split.length; i++) {
-                if (i%5==0){
+            for (int i = 0; i < split.length; i++) {
+                if ((i+1)%5==0){
                     String[] split1 = split[i].split("");
                     List<String> lists = Arrays.asList(split1);
                     Collections.reverse(lists);
                     for (String list:lists) {
                         System.out.print(list);
                     }
-                    System.out.println();
+                    System.out.print(" ");
                 }
             }
         } catch (FileNotFoundException e) {

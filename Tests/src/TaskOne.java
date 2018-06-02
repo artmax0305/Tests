@@ -10,7 +10,7 @@ public class TaskOne {
     }
 
     public static void main(String[] args) {
-        int[] ints =new int[]{1,2,3,4,4,5,6,7,8,9};
+        int[] ints =new int[]{1,2,3,4,4,6,7,8,9};
         methodSearch(ints);
     }
 }
