@@ -1,16 +1,29 @@
-public class TaskOne {
-    public static void methodSearch(int[] mass){
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
-        for (int i = 0; i < mass.length; i++) {
-            if (mass[i]==mass[i+1]){
-                System.out.println(mass[i]+1);
-                break;
+public class TaskOne {
+    public static void methodSearch(LinkedList<BigInteger> mass){
+
+        for (int i = 0; i < mass.size(); i++) {
+            if (mass.get(i).equals(mass.get(i+1))){
+                if(mass.get(i).equals(BigInteger.valueOf(i+1))) {
+                    BigInteger multiply = mass.get(i).add(BigInteger.valueOf(1));
+                    System.out.println(multiply);
+                    break;
+                }
+
             }
         }
     }
 
     public static void main(String[] args) {
-        int[] ints =new int[]{1,2,3,4,4,6,7,8,9};
-        methodSearch(ints);
+        LinkedList<BigInteger> arrayList =new LinkedList<>();
+        for (int i = 1; i < 10000; i++) {
+             arrayList.add(BigInteger.valueOf(i));
+        }
+        arrayList.set(1000, BigInteger.valueOf(1000));
+
+        methodSearch(arrayList);
     }
 }
