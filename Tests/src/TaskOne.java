@@ -1,9 +1,11 @@
+import javax.xml.crypto.Data;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedList;
 
 public class TaskOne {
-    public static void methodSearch(LinkedList<BigInteger> mass){
+    public static void methodSearch(ArrayList<BigInteger> mass){
 
         for (int i = 0; i < mass.size(); i++) {
             if (mass.get(i).equals(mass.get(i+1))){
@@ -18,11 +20,12 @@ public class TaskOne {
     }
 
     public static void main(String[] args) {
-        LinkedList<BigInteger> arrayList =new LinkedList<>();
-        for (int i = 1; i < 10000; i++) {
+        ArrayList<BigInteger> arrayList =new ArrayList<>();
+
+        for (int i = 1; i < 10_000_000; i++) {
              arrayList.add(BigInteger.valueOf(i));
         }
-        arrayList.set(1000, BigInteger.valueOf(1000));
+        arrayList.set(10000, BigInteger.valueOf(10000));
 
         methodSearch(arrayList);
     }
